@@ -3,13 +3,13 @@
 #include "sys_common.h"
 
 // 链表节点结构
-struct Node {
+typedef struct Node {
     void* data;
     struct Node* next;
-};
+}LIST_NODE;
 
 // 在链表的末尾插入新节点
-void list_insert(struct Node** head, void* data);
+INT32 list_insert(struct Node** head, void* data);
 
 // 创建链表，并设置回调函数
 struct Node* list_create(VOID * data);

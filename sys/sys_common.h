@@ -32,4 +32,14 @@ typedef unsigned long ULONG;
 
 typedef void VOID;
 
+#define SYS_CHECK_VOID(x) if ((x) == NULL) { \
+    fprintf(stderr, "\033[1;31mError: NULL reference %s:%d\033[0m\n", __FILE__, __LINE__); \
+    return; \
+}
+
+#define SYS_CHECK_PTR_RET(x, ret) if ((x) == NULL) { \
+    fprintf(stderr, "\033[1;31mError: NULL reference %s:%d\033[0m\n", __FILE__, __LINE__); \
+    return (ret); \
+}
+
 #endif
